@@ -29,15 +29,19 @@ function getComputerChoice () {
 function playRound(playerSelection, computerSelection) {
     //condition to check if playerSelection loses
     if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper' || playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock' || playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors') {
-        return 'you lost the round'
+        return 'you lost the round';
     }
     //condition to check if computerSelection loses
     else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock' || playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper' || playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors') {
-        return 'you won this round'
+        return 'you won this round';
+    }
+
+    else if (playerSelection !== computerSelection) {
+        return 'invalid choice';
     }
 
     else {
-        return 'tie'
+        return 'tie';
     }
     
 } 
