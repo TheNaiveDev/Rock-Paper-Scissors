@@ -1,7 +1,8 @@
 //make a list containing the rock, paper and scissors - done
 //use the random function to select one random item from the list - done
-/*steps taken in order to obtain the random computerChoice
 
+
+/*steps taken in order to obtain the random computerChoice
     -first off, create the array that will hold the data(list)
     -lets say the array is called myListArr and contains the following items ['fish','car','drain']
     -in order to make a random choice, we can create a new const var, say, randomChoice
@@ -15,44 +16,48 @@
 
 */
 
+//declare the main variables
+let playerScore = document.getElementById('playerScore');
+let computerScore = document.getElementById('computerScore');
+let randomMessage = document.getElementById('motivateMe');
+
+//declare a function which returns a quote from an array
+function motivationPromt() {
+    //possible quotes stored in an array
+    const listOfMessages = ['If you lose, you are gay','Loser, you need motivation for this?','Grow up kid, stop being such a wimp', 'bruh really?','How old are you mann, you do not need this'];
+    //choose a random quote from the array
+    let messageOutput = listOfMessages[Math.floor(Math.random() * listOfMessages.length)];
+    //alert the result
+    alert (messageOutput);
+}
+//when 'Motivate Me' button is clicked... return the motivationPrompt function
+randomMessage.addEventListener('click', function() {return motivationPromt();})
+
+//function to randomise computer choice
 function getComputerChoice () {
     //possible outcomes stored in an aray
     const possibleComputerChoices = ['rock','paper','scissors'];
     //using the math.random function, make a random choice from possibleComputerChoices
-    const computerChoice = possibleComputerChoices[Math.floor(Math.random() * possibleComputerChoices.length)]
+    const computerOption = possibleComputerChoices[Math.floor(Math.random() * possibleComputerChoices.length)]
     //return the random choice to the user as the computer's choice
-    return computerChoice;
+    return computerOption;
 }
 
-/*Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock" */
+//declare selection variables
+let playerChoiceRock = document.querySelector('rock');
+let playerChoicePaper = document.querySelector('paper');
+let playerChoiceScissors = document.querySelector('scissors')
+let computerChoice = getComputerChoice();
 
-function playRound(playerSelection, computerSelection) {
-    //condition to check if playerSelection loses
-    if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper' || playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock' || playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors') {
-        return 'you lost the round';
-    }
-    //condition to check if computerSelection loses
-    else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock' || playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper' || playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors') {
-        return 'you won this round';
-    }
+//functions to run if player clicks on an image
+playerChoiceRock.addEventListener('click', function() {return true;});
 
-    else if (playerSelection !== computerSelection) {
-        return 'invalid choice';
-    }
+//declare editable variables
+let playerChose = document.querySelector('playerChose');
+let outputChoice = document.createElement('p')
+outputChoice.textContent = 'you chose rock'
 
-    else {
-        return 'tie';
-    }
-    
-} 
-
-
-
-function game() {
-    //declare two local variables, one to contain the player's selection and another to contain the computer's selection
-    const computerSelection = getComputerChoice();
-    const playerSelection = prompt('what is your choice? ');
-    console.log(playRound(playerSelection, computerSelection));
+if (getComputerChoice === 'rock') {
+    playerChose.appendChild(outputChoice)
+    prompt (playerChose);
 }
-
-game()

@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 0, 0,0.85);
+    color: whitesmoke;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 60px;
+}
+
+hr {
+    height: 3px;
+    background-color: white;
+}
+
+.computerScore, .playerScore, .motivate-me, input, h1, .computerChoice, .playerChoice{
+    font-size: 35px;
+    background-image: linear-gradient(90deg,#4d78ef,#709df7,#7ed4fd);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    gap: 170px;
+    align-items: center;
+}
+
+img {
+    transition: 0.7s;
+    width: 300px;
+    border-radius: 16px;
+}
+
+img:hover {
+    cursor: pointer;
+    transform: scale(1.2);    
+}
+
+input {
+    width: 200px;
+    font-size: 35px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.motivate-me {
+    font-size: 35px;
+    text-align: center;
+    border-color: white;
+    box-shadow: 2px 2px 10px 2px #709df7;
+    transition: 0.3s;
+}
+
+.motivate-me:hover {
+    box-shadow: 4px 2px 20px 1px #ffffff;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.score-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 35px;
+}
+
+.click-images {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.click-images > img {
+    margin-bottom: 20px;
+}
+
+.click-images > img:hover {
+    transform: scale(1.1);
+}
+
+h2 {
+    font-size: 45px;
+    text-align: center;
+}

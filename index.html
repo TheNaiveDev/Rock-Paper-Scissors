@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>RPS</title>
 </head>
 <body>
+    <h1>
+        ROCK-PAPER-SCISSORS
+    </h1><hr>
+    <div class="main">
+        <input type="text" name="name" id="playerName" placeholder="NickName" maxlength="8" autocomplete="nickname">
+        <img class="imghere" src="random.png" alt="question mark">
+        <button id="motivateMe" class="motivate-me">Motivate Me</button>
+    </div>
+    <div class="score-area">
+        <p>computer played: <span id="computerChose" class="computerChoice"></span></p>
+        <p>Computer Score: <span id="computerScore" class="computerScore">0</span></p>
+        <p>Player Score: <span id="playerScore" class="playerScore">0</span></p>
+        <p>Player played: <span id="playerChose" class="playerChoice"></span></p>
+    </div>
+    <div id="images" class="click-images">
+        <img src="rock.png" alt="" id="rock">
+        <img src="paper.png" alt="" id="paper">
+        <img src="scissors.png" alt="" id="scissors">
+    </div><hr>
+    <h2>THE WINNER IS : <span id="winner"></span></h2>
     <script src="script.js"></script>
 </body>
 </html>
