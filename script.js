@@ -124,10 +124,8 @@ function scissorsResult() {
     if (computerChose.textContent === 'Paper' && playerChose.textContent === 'Scissors') {
         playerScore.textContent = Number(playerScore.textContent) + 1;
     }
-    else if (computerChose.textContent === 'rock' && playerChose.textContent === 'Scissors') {
+    else if (computerChose.textContent === 'Rock' && playerChose.textContent === 'Scissors') {
         computerScore.textContent = Number(computerScore.textContent) + 1;
     }
     checkWinner();
 };
-
-
