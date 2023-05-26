@@ -16,13 +16,11 @@
 
 */
 
-//declare the main variables
-let playerScore = document.getElementById('playerScore');
-let computerScore = document.getElementById('computerScore');
+//motivation variable
 let randomMessage = document.getElementById('motivateMe');
 
 //declare a function which returns a quote from an array
-function motivationPromt() {
+function motivationPrompt() {
     //possible quotes stored in an array
     const listOfMessages = ['If you lose, you are gay','Loser, you need motivation for this?','Grow up kid, stop being such a wimp', 'bruh really?','How old are you mann, you do not need this'];
     //choose a random quote from the array
@@ -31,33 +29,105 @@ function motivationPromt() {
     alert (messageOutput);
 }
 //when 'Motivate Me' button is clicked... return the motivationPrompt function
-randomMessage.addEventListener('click', function() {return motivationPromt();})
+randomMessage.addEventListener('click',motivationPrompt);
 
-//function to randomise computer choice
-function getComputerChoice () {
-    //possible outcomes stored in an aray
-    const possibleComputerChoices = ['rock','paper','scissors'];
-    //using the math.random function, make a random choice from possibleComputerChoices
-    const computerOption = possibleComputerChoices[Math.floor(Math.random() * possibleComputerChoices.length)]
-    //return the random choice to the user as the computer's choice
-    return computerOption;
+//create an array to include the computer choices
+const possibleComputerChoices = ['rock','paper','scissors'];
+
+//create a variable to return a random choice from the array
+let computerChose = document.getElementById('computerChose');
+let playerChose = document.getElementById('playerChose');
+let computerScore = document.getElementById('computerScore');
+let playerScore = document.getElementById('playerScore');
+let winner = document.getElementById('winner');
+function checkWinner() {
+    if (computerScore.textContent === '5') {
+        computerScore.textContent = '0';
+        playerScore.textContent = '0';
+        winner.textContent = 'COMPUTER WON!';
+    } else if (playerScore.textContent === '5') {
+        computerScore.textContent = '0';
+        playerScore.textContent = '0';
+        winner.textContent = 'PLAYER WON!';
+    }
+};
+
+function rockResult() {
+    const possibleComputerChoices = ['rock', 'paper', 'scissors'];
+    let computerOption = possibleComputerChoices[Math.floor(Math.random() * possibleComputerChoices.length)];
+    computerChose.textContent = '';
+    if (computerOption === 'rock') {
+        computerChose.textContent += 'Rock';
+        playerChose.textContent = 'Rock'
+    } else if (computerOption === 'paper') {
+        computerChose.textContent += 'Paper';
+        playerChose.textContent = 'Rock'
+
+    } else {
+        computerChose.textContent += 'Scissors';
+        playerChose.textContent = 'Rock'
+
+    }  
+    if (computerChose.textContent === 'Paper' && playerChose.textContent === 'Rock') {
+        computerScore.textContent = Number(computerScore.textContent) + 1;
+    }
+    else if (computerChose.textContent === 'Scissors' && playerChose.textContent === 'Rock') {
+        playerScore.textContent = Number(playerScore.textContent) + 1;
+    }
+
+    checkWinner();
+};
+
+function paperResult() {
+    const possibleComputerChoices = ['rock', 'paper', 'scissors'];
+    let computerOption = possibleComputerChoices[Math.floor(Math.random() * possibleComputerChoices.length)];
+    computerChose.textContent = '';
+    playerChose.textContent = '';
+    if (computerOption === 'rock') {
+        computerChose.textContent += 'Rock';
+        playerChose.textContent = 'Paper'
+    } else if (computerOption === 'paper') {
+        computerChose.textContent += 'Paper';
+        playerChose.textContent = 'Paper'
+    } else {
+        computerChose.textContent += 'Scissors';
+        playerChose.textContent = 'Paper'
+    }  
+    if (computerChose.textContent === 'Scissors' && playerChose.textContent === 'Paper') {
+        computerScore.textContent = Number(computerScore.textContent) + 1;
+    }
+    else if (computerChose.textContent === 'Rock' && playerChose.textContent === 'Paper') {
+        playerScore.textContent = Number(playerScore.textContent) + 1;
+    }
+    checkWinner();
+
 }
 
-//declare selection variables
-let playerChoiceRock = document.querySelector('rock');
-let playerChoicePaper = document.querySelector('paper');
-let playerChoiceScissors = document.querySelector('scissors')
-let computerChoice = getComputerChoice();
+function scissorsResult() {
+    const possibleComputerChoices = ['rock', 'paper', 'scissors'];
+    let computerOption = possibleComputerChoices[Math.floor(Math.random() * possibleComputerChoices.length)];
+    computerChose.textContent = '';
+    playerChose.textContent = '';
+    if (computerOption === 'rock') {
+        computerChose.textContent += 'Rock';
+        playerChose.textContent = 'Scissors';
+    } else if (computerOption === 'paper') {
+        computerChose.textContent += 'Paper';
+        playerChose.textContent = 'Scissors';
 
-//functions to run if player clicks on an image
-playerChoiceRock.addEventListener('click', function() {return true;});
+    } else {
+        computerChose.textContent += 'Scissors';
+        playerChose.textContent = 'Scissors';
 
-//declare editable variables
-let playerChose = document.querySelector('playerChose');
-let outputChoice = document.createElement('p')
-outputChoice.textContent = 'you chose rock'
+    }  
+    
+    if (computerChose.textContent === 'Paper' && playerChose.textContent === 'Scissors') {
+        playerScore.textContent = Number(playerScore.textContent) + 1;
+    }
+    else if (computerChose.textContent === 'rock' && playerChose.textContent === 'Scissors') {
+        computerScore.textContent = Number(computerScore.textContent) + 1;
+    }
+    checkWinner();
+};
 
-if (getComputerChoice === 'rock') {
-    playerChose.appendChild(outputChoice)
-    prompt (playerChose);
-}
+
