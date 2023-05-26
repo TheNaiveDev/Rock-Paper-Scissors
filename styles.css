@@ -90,8 +90,10 @@ h2 {
     width: 100px;
     height: 100px;
     background-position: center;
-    background-size: contain;
+    background-size:cover;
     transition:ease-out 0.7s;
+    background-repeat: no-repeat;
+
 }
 
 .option-button-paper {
