@@ -1,0 +1,188 @@
+  @import url('https://fonts.googleapis.com/css2?family=Lumanosimo&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(144, 238, 144, 0.9);
+    color: black;
+    font-family: Poppins, sans-serif;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 40px;
+    height: 50vh;
+}
+
+.score-area {
+    height: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 25px;
+    border-radius: 6px;
+    background-color: cadetblue;
+    box-shadow: 0 0 3px 4px rgb(115, 201, 115);
+
+}
+
+.design-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    width: 700px;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 4px rgb(115, 201, 115);
+}
+
+.design-container .choice-container {
+    display: flex;
+    border-radius: 6px;
+    font-size: 20px;
+    width: 650px;
+    height: 90%;
+    box-shadow: 0 0 3px inset whitesmoke;
+
+}
+
+.computer-choice-container {
+    width: 50%;
+}
+
+.player-choice-container {
+    width: calc(100% - 50%);
+}
+
+.computer-choice-container h3,
+ .player-choice-container h3 {
+    border-bottom: 1px solid snow;
+    height: 20%;
+ }
+
+.player-choice-container,
+.computer-choice-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    text-align: center;
+    height: 100%;
+    border: 1px solid snow;
+}
+
+.click-images {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    padding: 6px;
+    gap: 20px;
+
+}
+
+.computerScore, .playerScore, input, .computerChoice, .playerChoice{
+    font-size: 35px;
+    color: white;
+}
+
+input {
+    width: 200px;
+    font-size: 35px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 45px;
+    text-align: center;
+}
+
+.option-button-rock, .option-button-paper, .option-button-scissors {
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 16px;
+    border: none;
+    background-image: url(rock.png);
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+
+}
+
+.option-button-paper {
+    background-image: url(paper.png);
+}
+
+.option-button-scissors {
+    background-image: url(scissors.png);
+}
+
+.reset {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.reset button {
+    font-family: Lumanosimo;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 16px;
+    border: none;
+    background-color: #dc143c;
+    color: snow;
+    box-shadow: 0 0 3px 4px crimson;
+}
+
+.scoreboard {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    width: 90vw;
+    height: 250px;
+    background-color: transparent;
+    box-shadow: 0 0 3px 4px rgb(115, 201, 115);
+}
+
+#winner {
+    background-color: cadetblue;
+    width: 98%;
+    height: 90%;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    letter-spacing: 20px;
+}
+
+.footer {
+    display: flex;
+    height: 17vh;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}

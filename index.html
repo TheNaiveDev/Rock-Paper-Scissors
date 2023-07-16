@@ -1,0 +1,51 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>RPS</title>
+</head>
+<body>
+    <div class="main">
+        <div class="score-area">
+            <h2>ROCK PAPER SCISSORS</h2>
+            <p>First to score 5 points wins!</p>
+            <p>Computer Score: <span id="computerScore" class="computerScore">0</span></p>
+            <p>Player Score: <span id="playerScore" class="playerScore">0</span></p>
+            <div id="images" class="click-images">
+                <button id="rockBtn" class="option-button-rock"></button>
+                <button id="paperBtn" class="option-button-paper"></button>
+                <button id="scissorsBtn" class="option-button-scissors"></button>
+            </div>
+            <div class="reset">
+                <button class="reset">Click To Reset</button>
+            </div>
+        </div>
+        <div class="design-container">
+            <div class="choice-container">
+                <div class="computer-choice-container">
+                    <h3>Computer Choice</h3>
+                    <div class="computer-choice-image">
+                    </div>
+                </div>
+                <div class="player-choice-container">
+                    <h3>Player Choice</h3>
+                    <div class="player-choice-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scoreboard">
+        <div id="winner">
+            GET READY!!!
+        </div>
+    </div>
+    <div class="footer">
+        <p>Denzel Ashitey  |  <a href="https://theodinproject.com" target="_blank">The Odin Project</a></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
